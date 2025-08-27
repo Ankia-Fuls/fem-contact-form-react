@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      Contact Us
+
+      First Name
+      This field is required
+
+      Last Name
+      This field is required
+
+      Email Address
+      Please enter a valid email address
+      This field is required
+
+      Query Type
+      General Enquiry
+      Support Request
+      Please select a query type
+
+      Message
+      This field is required
+
+      I consent to being contacted by the team
+      To submit this form, please consent to being contacted
+
+      Submit
+
+      Message Sent!
+      Thanks for completing the form. We'll be in touch soon!
+
+      <div className="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        {/* Coded by <a href="#">Your Name Here</a>. */}
+      </div>
+    </main>
   );
 }
 

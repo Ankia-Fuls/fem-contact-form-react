@@ -30,18 +30,6 @@ body {
     width: 100vw;
 }
 
-main {
-    width: 92%;
-    max-width: 46.0625rem;
-
-    margin-inline: auto;
-
-    background-color: var(--white);
-
-    padding: 1.5625rem;
-    border-radius: 0.9375rem;
-}
-
 .form__error {
     display: none;
 }
@@ -74,4 +62,43 @@ textarea,
     border: 0.0625rem solid var(--green-600);
 
     min-height: 3.125rem;
+}
+
+.form {
+    width: 92%;
+    max-width: 46.0625rem;
+
+    margin-inline: auto;
+
+    background-color: var(--white);
+
+    padding: 1.5625rem;
+    border-radius: 0.9375rem;
+
+    &__required {
+        color: var(--green-600);
+        font-size: inherit;
+        margin-inline-start: 0.125rem;
+    }
+
+    &__submit {
+        width: 100%;
+        height: 3.75rem;
+
+        border: none;
+        background-color: var(--green-600);
+        border-radius: 0.3125rem;
+
+        font-size: 1rem;
+        font-family: inherit;
+        color: var(--white);
+        font-weight: 600;
+
+    }
+
+    &__heading {
+        font-size: 1.9rem;
+
+        margin-bottom: 1.5625rem;
+    }
 }

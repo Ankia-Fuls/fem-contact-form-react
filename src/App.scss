@@ -39,7 +39,7 @@ main {
     background-color: var(--white);
 
     padding: 1.5625rem;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
 }
 
 .form__error {
@@ -67,15 +67,11 @@ fieldset {
 
 input[type="text"],
 input[type="email"],
-textarea {
-    width: 100%;
-}
-
-input,
 textarea,
 .form__container {
-    border-radius: 5px;
-    border: 1px solid var(--green-600);
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid var(--green-600);
 
     min-height: 3.125rem;
 }

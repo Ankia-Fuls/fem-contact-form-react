@@ -26,11 +26,11 @@ function Main() {
                 <fieldset className="form__type">
                     <legend>Query Type</legend>
                     <div className="radio-buttons">
-                        <div>
+                        <div className="form__container">
                             <input type="radio" id="general" name="type" value="general" />
                             <label for="general">General Enquiry</label>
                         </div>
-                        <div>
+                        <div className="form__container">
                             <input type="radio" id="support" name="type" value="support" />
                             <label for="support">Support Request</label>
                         </div>

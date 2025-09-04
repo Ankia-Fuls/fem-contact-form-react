@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
 :root {
     --green-200: hsl(148, 38%, 91%);
     --green-600: hsl(169, 82%, 27%);
@@ -5,13 +7,75 @@
     --white: hsl(0, 0%, 100%);
     --grey-500: hsl(186, 15%, 59%);
     --grey-900: hsl(187, 24%, 22%);
+    --attribution: hsl(228, 45%, 44%);
+}
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 100%;
+    font-family: "Karla", sans-serif;
+    font-weight: 400;
+
+    background-color: var(--green-200);
+    color: var(--grey-900);
+
+    padding-top: 1.875rem;
+    width: 100vw;
+}
+
+main {
+    width: 92%;
+    max-width: 46.0625rem;
+
+    margin-inline: auto;
+
+    background-color: var(--white);
+
+    padding: 1.5625rem;
+    border-radius: 15px;
+}
+
+.form__error {
+    display: none;
 }
 
 .attribution {
-    font-size: 11px;
+    font-size: 0.6875rem;
     text-align: center;
+    padding: 1rem;
+
+    width: 92%;
+    max-width: 46.0625rem;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: var(--attribution);
+}
+
+fieldset {
+    border: none;
+
+    margin-bottom: 1.5625rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+}
+
+input,
+textarea,
+.form__container {
+    border-radius: 5px;
+    border: 1px solid var(--green-600);
+
+    min-height: 3.125rem;
 }

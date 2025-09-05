@@ -1,4 +1,9 @@
 function Main() {
+
+    // keep state variables of input values
+    // on button click, check each variable for if it is correct, set flags
+    // use variable for class names which change depending on the flag
+
     return (
         <main>
             <form className="form">

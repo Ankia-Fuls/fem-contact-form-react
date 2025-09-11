@@ -145,9 +145,42 @@ input[type="email"] {
     &__consent {
         display: flex;
         align-items: center;
-        gap: 1.0625rem;
+        gap: 1.25rem;
+
+        &--input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &--checkbox {
+            cursor: pointer;
+
+            flex-shrink: 0;
+            flex-grow: 0;
+
+            width: 1.1875rem;
+            height: 1.1875rem;
+
+            border: 2px solid var(--grey-500);
+            border-radius: 2px;
+        }
+    }
+
+    &__error {
+        padding-top: 0.625rem;
+        color: var(--red);
     }
 }
+
+.form__consent--input:checked~.form__consent--checkbox {
+    border: none;
+    background-image: url(../public/images/icon-checkbox-check.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 
 .radio-buttons {
     display: flex;
@@ -158,6 +191,7 @@ input[type="email"] {
         flex-direction: row;
     }
 }
+
 
 @media only screen and (min-width: 59.375rem) {
 

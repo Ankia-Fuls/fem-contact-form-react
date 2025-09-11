@@ -100,8 +100,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Form validation JS](https://www.geeksforgeeks.org/javascript/form-validation-using-javascript/) - This helped me understand the principle of form validation using clean JavaScript.
 - [Form information FreeCodeCamp](https://www.freecodecamp.org/news/form-validation-in-javascript/) - This gave more information on using forms with standard JavaScript.
 - [React and react-hook-form](https://mattburgess.medium.com/why-would-i-use-react-hook-form-8ae7b905953e) - This gave a good overview of form validation with react as well as how to use react-hook-form to do the same thing.
-
-
+- [Change background image of custom checkbox](https://lucidar.me/en/web-dev/replace-html-checkbox-with-images/) - This was a good explanation on how to create a custom checkbox;
 
 ## Author
 

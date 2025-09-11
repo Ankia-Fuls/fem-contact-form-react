@@ -125,9 +125,17 @@ function Main() {
                     )}
                 </fieldset>
 
-                <fieldset className="form__consent">
-                    <input type="checkbox" id="consent" name="consent" checked={termsAgreed} onChange={(e) => setTermsAgreed(!termsAgreed)}></input>
-                    <label htmlFor="consent">I consent to being contacted by the team <span className="form__required" aria-label="Required input.">*</span></label>
+                <fieldset >
+                    <label htmlFor="consent" className="form__consent">
+                        <input className='form__consent--input' type="checkbox" id="consent" name="consent" checked={termsAgreed} onChange={(e) => setTermsAgreed(!termsAgreed)}></input>
+                        <span className='form__consent--checkbox'></span>
+                        <p>I consent to being contacted by the team <span className="form__required" aria-label="Required input.">*</span></p>
+                    </label>
+                    {/* <div className="form__consent">
+                        <input type="checkbox" id="consent" name="consent" checked={termsAgreed} onChange={(e) => setTermsAgreed(!termsAgreed)}></input>
+                        <label htmlFor="consent">I consent to being contacted by the team <span className="form__required" aria-label="Required input.">*</span></label>
+                    </div> */}
+
                     {fieldErrors.termsAgreed && (
                         <p className="form__error">{fieldErrors.termsAgreed}</p>
                     )}

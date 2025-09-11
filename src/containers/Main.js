@@ -13,7 +13,58 @@ function Main() {
     const [fieldErrors, setFieldErrors] = useState({});
     const [submitted, setSubmitted] = useState(false);
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     const errors = {};
+
+    //     if (firstName.trim() === '') {
+    //         errors.firstName = 'This field is required.';
+    //     }
+
+    //     if (lastName.trim() === '') {
+    //         errors.lastName = 'This field is required.';
+    //     }
+
+    //     if (email.trim() === '') {
+    //         errors.email_required = 'This field is required.';
+    //     }
+
+    //     if (!email.includes('@')) {
+    //         errors.email_valid = 'Please enter a valid email address.';
+    //     }
+
+    //     if (queryType === '') {
+    //         errors.query = 'Please select a query type.';
+    //     }
+
+    //     if (message.trim() === '') {
+    //         errors.message = 'This field is required.';
+    //     }
+
+    //     if (!termsAgreed) {
+    //         errors.termsAgreed = 'To submit this form, please consent to being contacted';
+    //     }
+
+    //     setFieldErrors(errors);
+
+    //     const isEmailValid = email.includes('@') && email.trim() !== '';
+    //     const isQueryValid = queryType !== "";
+    //     const isMessageValid = message.trim() !== "";
+    //     const areNamesValid = firstName.trim() !== '' && lastName.trim() !== '';
+    //     const areTermsValid = termsAgreed;
+
+    //     setIsFormValid(
+    //         isEmailValid &&
+    //         isQueryValid &&
+    //         isMessageValid &&
+    //         areNamesValid &&
+    //         areTermsValid
+    //     );
+    // }, [firstName, lastName, email, queryType, message, termsAgreed]);
+
+
+    const submitForm = (e) => {
+        e.preventDefault();
+
         const errors = {};
 
         if (firstName.trim() === '') {
@@ -59,12 +110,8 @@ function Main() {
             areNamesValid &&
             areTermsValid
         );
-    }, [firstName, lastName, email, queryType, message, termsAgreed]);
 
 
-    const submitForm = (e) => {
-        e.preventDefault();
-        setSubmitted(true);
     }
 
     return (
@@ -151,10 +198,11 @@ function Main() {
                     )}
                 </fieldset>
 
-                <input className="form__submit" type="submit" value="Submit" disabled={!isFormValid} onClick={submitForm} />
+                {/* <input className="form__submit" type="submit" value="Submit" disabled={!isFormValid} onClick={submitForm} /> */}
+                <input className="form__submit" type="submit" value="Submit" onClick={submitForm} />
             </form>
 
-            <dialog className="pop-up" open={submitted}>
+            <dialog className="pop-up" open={isFormValid}>
                 <div className="pop-up__heading">
                     <img src="./images/icon-success-check.svg" alt='checkmark' aria-hidden="true"></img>
                     <p>Message Sent!</p>

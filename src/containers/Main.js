@@ -103,14 +103,24 @@ function Main() {
                 <fieldset className="form__type">
                     <legend>Query Type <span className="form__required" aria-label="Required input.">*</span></legend>
                     <div className="radio-buttons">
-                        <div className="form__container">
+                        <label className="form__container" htmlFor="general">
+                            <input className='form__container--input' type="radio" id="general" name="type" value="general" checked={queryType === 'general'} onChange={(e) => setQueryType(e.target.value)} />
+                            <span className='form__container--checkbox'></span>
+                            <p>General Enquiry</p>
+                        </label>
+                        {/* <div className="form__container">
                             <input type="radio" id="general" name="type" value="general" checked={queryType === 'general'} onChange={(e) => setQueryType(e.target.value)} />
-                            <label htmlFor="general">General Enquiry</label>
-                        </div>
-                        <div className="form__container">
+                            <label htmlFor="general"></label>
+                        </div> */}
+                        <label className="form__container" htmlFor="support">
+                            <input className='form__container--input' type="radio" id="support" name="type" value="support" checked={queryType === 'support'} onChange={(e) => setQueryType(e.target.value)} />
+                            <span className='form__container--checkbox'></span>
+                            <p>Support Request</p>
+                        </label>
+                        {/* <div className="form__container">
                             <input type="radio" id="support" name="type" value="support" checked={queryType === 'support'} onChange={(e) => setQueryType(e.target.value)} />
                             <label htmlFor="support">Support Request</label>
-                        </div>
+                        </div> */}
                     </div>
                     {fieldErrors.query && (
                         <p className="form__error">{fieldErrors.query}</p>
@@ -119,7 +129,7 @@ function Main() {
 
                 <fieldset className="form__message">
                     <legend>Message <span className="form__required" aria-label="Required input.">*</span></legend>
-                    <textarea name="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    <textarea className='form__message--text' name="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                     {fieldErrors.message && (
                         <p className="form__error">{fieldErrors.message}</p>
                     )}

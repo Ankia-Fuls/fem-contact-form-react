@@ -102,6 +102,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [React and react-hook-form](https://mattburgess.medium.com/why-would-i-use-react-hook-form-8ae7b905953e) - This gave a good overview of form validation with react as well as how to use react-hook-form to do the same thing.
 - [Change background image of custom checkbox](https://lucidar.me/en/web-dev/replace-html-checkbox-with-images/) - This was a good explanation on how to create a custom checkbox;
 - [Conditional classes REACT](https://stackoverflow.com/questions/30533171/conditionally-applying-class-attributes-in-react) - This showed an example of how to create conditional classes in react.
+- [Parent selector in CSS](https://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector) - This showed me how to select the parent of an element to change the style of the parent if the child is checked.
 
 ## Author
 

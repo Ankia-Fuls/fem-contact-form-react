@@ -3,6 +3,7 @@
 :root {
     --green-200: hsl(148, 38%, 91%);
     --green-600: hsl(169, 82%, 27%);
+    --green-900: hsl(169, 59%, 15%);
     --red: hsl(0, 66%, 54%);
     --white: hsl(0, 0%, 100%);
     --grey-500: hsl(186, 15%, 59%);
@@ -95,6 +96,24 @@ input[type="text"],
 input[type="email"] {
     padding: 1rem;
     font-size: 1rem;
+}
+
+input[type="text"]:hover,
+input[type="text"]:active,
+input[type="email"]:hover,
+input[type="email"]:active,
+textarea:hover,
+textarea:active {
+    border: 0.0625rem solid var(--green-600);
+}
+
+input:focus,
+input:active,
+.form__container:focus,
+.form__container:active {
+    outline: none;
+    border: 0.0625rem solid var(--green-600);
+    background-color: var(--green-200);
 }
 
 .form {
@@ -232,6 +251,20 @@ input[type="email"] {
     background-size: cover;
 }
 
+.form__container:has(.form__container--input:checked),
+.form__container:has(.form__container--input:active),
+.form__container:has(.form__container--input:focus) {
+    border: 0.0625rem solid var(--green-600);
+    background-color: var(--green-200);
+}
+
+.form__consent--input:focus~.form__consent--checkbox,
+.form__consent--input:active~.form__consent--checkbox {
+    border: 0.125rem solid var(--green-600);
+    background-color: var(--green-200);
+}
+
+
 .radio-buttons {
     display: flex;
     flex-direction: column;
@@ -242,6 +275,11 @@ input[type="email"] {
     }
 }
 
+.form__submit:hover,
+.form__submit:active,
+.form__submit:focus {
+    background-color: var(--green-900);
+}
 
 @media only screen and (min-width: 59.375rem) {
 

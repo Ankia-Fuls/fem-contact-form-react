@@ -140,7 +140,7 @@ function Main() {
                     )}
                 </fieldset>
 
-                <fieldset >
+                <fieldset className='form__consent--container'>
                     <label htmlFor="consent" className="form__consent">
                         <input className='form__consent--input' type="checkbox" id="consent" name="consent" checked={termsAgreed} onChange={(e) => setTermsAgreed(!termsAgreed)}></input>
                         <span className='form__consent--checkbox'></span>

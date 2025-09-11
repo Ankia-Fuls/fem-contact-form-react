@@ -29,6 +29,10 @@ body {
 
     padding-top: 1.875rem;
     width: 100vw;
+
+    @media only screen and (min-width: 59.375rem) {
+        padding-top: 8.8%;
+    }
 }
 
 .attribution {
@@ -46,22 +50,6 @@ fieldset {
 
     margin-bottom: 1.5625rem;
 }
-
-textarea {
-    height: 15rem;
-    overflow: scroll;
-}
-
-// input[type="text"],
-// input[type="email"],
-// textarea,
-// .form__container {
-//     width: 100%;
-//     border-radius: 0.3125rem;
-//     border: 0.0625rem solid var(--green-600);
-
-//     min-height: 3.125rem;
-// }
 
 .form__border--normal {
     width: 100%;
@@ -110,7 +98,9 @@ textarea:active {
 input:focus,
 input:active,
 .form__container:focus,
-.form__container:active {
+.form__container:active,
+textarea:focus,
+textarea:active {
     outline: none;
     border: 0.0625rem solid var(--green-600);
     background-color: var(--green-200);
@@ -223,6 +213,10 @@ input:active,
             border: 0.125rem solid var(--grey-500);
             border-radius: 0.125rem;
         }
+
+        &--container {
+            padding: 1rem 0 1rem;
+        }
     }
 
     &__error {
@@ -234,6 +228,14 @@ input:active,
         padding: 1rem;
         font-size: 1rem;
         font-family: inherit;
+
+        height: 15rem;
+        overflow: scroll;
+        resize: none;
+
+        @media only screen and (min-width: 59.375rem) {
+            height: 6.5rem;
+        }
     }
 }
 
@@ -286,5 +288,9 @@ input:active,
     .form__name--first,
     .form__name--last {
         width: 50%;
+    }
+
+    .radio-buttons {
+        margin-top: 0.9375rem;
     }
 }

@@ -11,60 +11,9 @@ function Main() {
 
     const [isFormValid, setIsFormValid] = useState(false);
     const [fieldErrors, setFieldErrors] = useState({});
-    const [submitted, setSubmitted] = useState(false);
+    // const [submitted, setSubmitted] = useState(false);
 
-    // useEffect(() => {
-    //     const errors = {};
-
-    //     if (firstName.trim() === '') {
-    //         errors.firstName = 'This field is required.';
-    //     }
-
-    //     if (lastName.trim() === '') {
-    //         errors.lastName = 'This field is required.';
-    //     }
-
-    //     if (email.trim() === '') {
-    //         errors.email_required = 'This field is required.';
-    //     }
-
-    //     if (!email.includes('@')) {
-    //         errors.email_valid = 'Please enter a valid email address.';
-    //     }
-
-    //     if (queryType === '') {
-    //         errors.query = 'Please select a query type.';
-    //     }
-
-    //     if (message.trim() === '') {
-    //         errors.message = 'This field is required.';
-    //     }
-
-    //     if (!termsAgreed) {
-    //         errors.termsAgreed = 'To submit this form, please consent to being contacted';
-    //     }
-
-    //     setFieldErrors(errors);
-
-    //     const isEmailValid = email.includes('@') && email.trim() !== '';
-    //     const isQueryValid = queryType !== "";
-    //     const isMessageValid = message.trim() !== "";
-    //     const areNamesValid = firstName.trim() !== '' && lastName.trim() !== '';
-    //     const areTermsValid = termsAgreed;
-
-    //     setIsFormValid(
-    //         isEmailValid &&
-    //         isQueryValid &&
-    //         isMessageValid &&
-    //         areNamesValid &&
-    //         areTermsValid
-    //     );
-    // }, [firstName, lastName, email, queryType, message, termsAgreed]);
-
-
-    const submitForm = (e) => {
-        e.preventDefault();
-
+    const validateForm = () => {
         const errors = {};
 
         if (firstName.trim() === '') {
@@ -110,8 +59,17 @@ function Main() {
             areNamesValid &&
             areTermsValid
         );
+    }
+
+    // useEffect(() => {
+    //     validateForm();
+    // }, [firstName, lastName, email, queryType, message, termsAgreed]);
 
 
+    const submitForm = (e) => {
+        e.preventDefault();
+
+        validateForm();
     }
 
     return (

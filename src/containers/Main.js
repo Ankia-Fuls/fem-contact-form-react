@@ -74,7 +74,7 @@ function Main() {
                 <fieldset className="form__name">
                     <div className="form__name--first">
                         <label htmlFor="first-name">First Name <span className="form__required" aria-label="Required input.">*</span></label>
-                        <input type="text" id="first-name" name="first-name" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
+                        <input type="text" id="first-name" name="first-name" value={firstName} onChange={(e) => setFirstName(e.target.value)} className={(fieldErrors.firstName ? 'form__border--error' : 'form__border--normal')}></input>
                         {fieldErrors.firstName && (
                             <p className="form__error">{fieldErrors.firstName}</p>
                         )}
@@ -82,7 +82,7 @@ function Main() {
                     </div>
                     <div className="form__name--last">
                         <label htmlFor="last-name">Last Name <span className="form__required" aria-label="Required input.">*</span></label>
-                        <input type="text" id="last-name" name="last-name" value={lastName} onChange={(e) => setLastName(e.target.value)}></input>
+                        <input type="text" id="last-name" name="last-name" value={lastName} onChange={(e) => setLastName(e.target.value)} className={(fieldErrors.lastName ? 'form__border--error' : 'form__border--normal')}></input>
                         {fieldErrors.lastName && (
                             <p className="form__error">{fieldErrors.lastName}</p>
                         )}
@@ -91,7 +91,7 @@ function Main() {
 
                 <fieldset className="form__email">
                     <label htmlFor="email">Email Address <span className="form__required" aria-label="Required input.">*</span></label>
-                    <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                    <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={(fieldErrors.email_required || fieldErrors.email_valid ? 'form__border--error' : 'form__border--normal')}></input>
                     {fieldErrors.email_required && (
                         <p className="form__error">{fieldErrors.email_required}</p>
                     )}
@@ -103,7 +103,7 @@ function Main() {
                 <fieldset className="form__type">
                     <legend>Query Type <span className="form__required" aria-label="Required input.">*</span></legend>
                     <div className="radio-buttons">
-                        <label className="form__container" htmlFor="general">
+                        <label className="form__container form__border--normal" htmlFor="general">
                             <input className='form__container--input' type="radio" id="general" name="type" value="general" checked={queryType === 'general'} onChange={(e) => setQueryType(e.target.value)} />
                             <span className='form__container--checkbox'></span>
                             <p>General Enquiry</p>
@@ -112,7 +112,7 @@ function Main() {
                             <input type="radio" id="general" name="type" value="general" checked={queryType === 'general'} onChange={(e) => setQueryType(e.target.value)} />
                             <label htmlFor="general"></label>
                         </div> */}
-                        <label className="form__container" htmlFor="support">
+                        <label className="form__container form__border--normal" htmlFor="support">
                             <input className='form__container--input' type="radio" id="support" name="type" value="support" checked={queryType === 'support'} onChange={(e) => setQueryType(e.target.value)} />
                             <span className='form__container--checkbox'></span>
                             <p>Support Request</p>
@@ -129,7 +129,7 @@ function Main() {
 
                 <fieldset className="form__message">
                     <legend>Message <span className="form__required" aria-label="Required input.">*</span></legend>
-                    <textarea className='form__message--text' name="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    <textarea className={(fieldErrors.message ? 'form__message--text form__border--error' : 'form__message--text form__border--normal')} name="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                     {fieldErrors.message && (
                         <p className="form__error">{fieldErrors.message}</p>
                     )}
@@ -153,6 +153,7 @@ function Main() {
 
                 <input className="form__submit" type="submit" value="Submit" disabled={!isFormValid} onClick={submitForm} />
             </form>
+
             <dialog className="pop-up" open={submitted}>
                 <div className="pop-up__heading">
                     <img src="./images/icon-success-check.svg" alt='checkmark' aria-hidden="true"></img>

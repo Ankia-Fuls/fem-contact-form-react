@@ -34,9 +34,6 @@ body {
     font-size: 0.6875rem;
     text-align: center;
     padding: 1rem;
-
-    // width: 92%;
-    // max-width: 46.0625rem;
 }
 
 .attribution a {
@@ -51,15 +48,32 @@ fieldset {
 
 textarea {
     height: 15rem;
+    overflow: scroll;
 }
 
-input[type="text"],
-input[type="email"],
-textarea,
-.form__container {
+// input[type="text"],
+// input[type="email"],
+// textarea,
+// .form__container {
+//     width: 100%;
+//     border-radius: 0.3125rem;
+//     border: 0.0625rem solid var(--green-600);
+
+//     min-height: 3.125rem;
+// }
+
+.form__border--normal {
     width: 100%;
     border-radius: 0.3125rem;
     border: 0.0625rem solid var(--green-600);
+
+    min-height: 3.125rem;
+}
+
+.form__border--error {
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid var(--red);
 
     min-height: 3.125rem;
 }

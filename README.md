@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Repo](https://github.com/Ankia-Fuls/fem-contact-form-react)
+- Live Site URL: [GitHub Pages](https://ankia-fuls.github.io/fem-contact-form-react/)
 
 ## My process
 
@@ -90,6 +90,7 @@ I would like to learn how to use react-hook-form to do this project in the futur
 - [Parent selector in CSS](https://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector) - This showed me how to select the parent of an element to change the style of the parent if the child is checked.
 - [Regex for email validation](https://medium.com/@python-javascript-php-html-css/the-best-regular-expression-for-email-address-verification-42bf83ba2885) - This showed me how to use regex to validate an email address.
 - [Aria-invalid and description](https://adrianroselli.com/2022/02/support-for-marking-radio-buttons-required-invalid.html) - This helped explain how to use the aria-invalid and aria-describedby with role radiogroup to mark a fieldset of radio buttons as valid or invalid.
+- [Publish to Github pages](https://gist.github.com/cobyism/4730490) - This showed me how to publish my project to github pages.
 
 ## Author
 

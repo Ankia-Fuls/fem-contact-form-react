@@ -86,6 +86,7 @@ function Main() {
         validateForm();
     }
 
+
     return (
         <main>
             <form className="form">
@@ -175,11 +176,13 @@ function Main() {
             </form>
 
             <dialog className="pop-up" open={isFormValid}>
-                <div className="pop-up__heading">
-                    <img src="./images/icon-success-check.svg" alt='checkmark' aria-hidden="true"></img>
-                    <p>Message Sent!</p>
+                <div className='pop-up__container'>
+                    <div className="pop-up__heading">
+                        <img src="./images/icon-success-check.svg" alt='checkmark' aria-hidden="true"></img>
+                        <p>Message Sent!</p>
+                    </div>
+                    <p className="pop-up__text">Thanks for completing the form. We'll be in touch soon!</p>
                 </div>
-                <p className="pop-up__text">Thanks for completing the form. We'll be in touch soon!</p>
             </dialog>
 
         </main>

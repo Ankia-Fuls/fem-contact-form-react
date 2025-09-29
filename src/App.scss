@@ -285,12 +285,13 @@ textarea:active {
 
 .pop-up {
     position: absolute;
-    top: 1.4375rem;
+    top: 20vh;
     left: 50%;
     transform: translateX(-50%);
 
     width: 31.32%;
-    height: 6.75rem;
+    min-width: 14rem;
+    min-height: 6.75rem;
 
     border: none;
     border-radius: 0.9375rem;
@@ -300,12 +301,10 @@ textarea:active {
 
     padding: 1.5625rem;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    @media only screen and (min-width: 59.375rem) {
+        top: 1.4375rem;
+        min-width: 19.6875rem;
 
-        height: 100%;
     }
 
     &__heading {
@@ -314,6 +313,8 @@ textarea:active {
         gap: 0.5rem;
 
         font-weight: 700;
+
+        margin-bottom: 0.9375rem;
     }
 
     &__text {

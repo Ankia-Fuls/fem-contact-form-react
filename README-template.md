@@ -103,6 +103,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Change background image of custom checkbox](https://lucidar.me/en/web-dev/replace-html-checkbox-with-images/) - This was a good explanation on how to create a custom checkbox;
 - [Conditional classes REACT](https://stackoverflow.com/questions/30533171/conditionally-applying-class-attributes-in-react) - This showed an example of how to create conditional classes in react.
 - [Parent selector in CSS](https://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector) - This showed me how to select the parent of an element to change the style of the parent if the child is checked.
+- [Regex for email validation](https://medium.com/@python-javascript-php-html-css/the-best-regular-expression-for-email-address-verification-42bf83ba2885) - This showed me how to use regex to validate an email address.
 
 ## Author
 

@@ -28,7 +28,9 @@ function Main() {
             errors.email_required = 'This field is required.';
         }
 
-        if (!email.includes('@')) {
+        var testEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!testEmail.test(email)) {
             errors.email_valid = 'Please enter a valid email address.';
         }
 
@@ -46,7 +48,7 @@ function Main() {
 
         setFieldErrors(errors);
 
-        const isEmailValid = email.includes('@') && email.trim() !== '';
+        const isEmailValid = testEmail.test(email) && email.trim() !== '';
         const isQueryValid = queryType !== "";
         const isMessageValid = message.trim() !== "";
         const areNamesValid = firstName.trim() !== '' && lastName.trim() !== '';

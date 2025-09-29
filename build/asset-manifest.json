@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fem-contact-form-react/static/css/main.37164c57.css",
+    "main.js": "/fem-contact-form-react/static/js/main.abf6e565.js",
+    "index.html": "/fem-contact-form-react/index.html",
+    "static/media/icon-checkbox-check.svg": "/fem-contact-form-react/static/media/icon-checkbox-check.35b26dcf81381588048c.svg",
+    "static/media/icon-radio-selected.svg": "/fem-contact-form-react/static/media/icon-radio-selected.5d82cd985c022ff01958.svg",
+    "main.37164c57.css.map": "/fem-contact-form-react/static/css/main.37164c57.css.map",
+    "main.abf6e565.js.map": "/fem-contact-form-react/static/js/main.abf6e565.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37164c57.css",
+    "static/js/main.abf6e565.js"
+  ]
+}

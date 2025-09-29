@@ -52,13 +52,27 @@ function Main() {
         const areNamesValid = firstName.trim() !== '' && lastName.trim() !== '';
         const areTermsValid = termsAgreed;
 
-        setIsFormValid(
-            isEmailValid &&
+        const validFlag = isEmailValid &&
             isQueryValid &&
             isMessageValid &&
             areNamesValid &&
-            areTermsValid
-        );
+            areTermsValid;
+
+        setIsFormValid(validFlag);
+
+        if (validFlag) {
+            clearForm();
+        }
+    }
+
+    const clearForm = () => {
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setQueryType("");
+        setMessage("");
+        setTermsAgreed(false);
+        setFieldErrors({});
     }
 
     // useEffect(() => {

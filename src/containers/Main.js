@@ -96,37 +96,54 @@ function Main() {
                 <fieldset className="form__name">
                     <div className="form__name--first">
                         <label htmlFor="first-name">First Name <span className="form__required" aria-label="Required input.">*</span></label>
-                        <input type="text" id="first-name" name="first-name" value={firstName} onChange={(e) => setFirstName(e.target.value)} className={(fieldErrors.firstName ? 'form__border--error' : 'form__border--normal')}></input>
+                        <input type="text" id="first-name" name="first-name"
+                            value={firstName} onChange={(e) => setFirstName(e.target.value)}
+                            className={(fieldErrors.firstName ? 'form__border--error' : 'form__border--normal')}
+                            autocomplete="given-name" required
+                            aria-invalid={fieldErrors.firstName ? true : false} aria-describedby="firstNameError">
+                        </input>
                         {fieldErrors.firstName && (
-                            <p className="form__error">{fieldErrors.firstName}</p>
+                            <p id='firstNameError' className="form__error">{fieldErrors.firstName}</p>
                         )}
 
                     </div>
                     <div className="form__name--last">
                         <label htmlFor="last-name">Last Name <span className="form__required" aria-label="Required input.">*</span></label>
-                        <input type="text" id="last-name" name="last-name" value={lastName} onChange={(e) => setLastName(e.target.value)} className={(fieldErrors.lastName ? 'form__border--error' : 'form__border--normal')}></input>
+                        <input type="text" id="last-name" name="last-name"
+                            value={lastName} onChange={(e) => setLastName(e.target.value)}
+                            className={(fieldErrors.lastName ? 'form__border--error' : 'form__border--normal')}
+                            autocomplete="family-name" required
+                            aria-invalid={fieldErrors.lastName ? true : false} aria-describedby="lastNameError">
+                        </input>
                         {fieldErrors.lastName && (
-                            <p className="form__error">{fieldErrors.lastName}</p>
+                            <p id='lastNameError' className="form__error">{fieldErrors.lastName}</p>
                         )}
                     </div>
                 </fieldset>
 
                 <fieldset className="form__email">
                     <label htmlFor="email">Email Address <span className="form__required" aria-label="Required input.">*</span></label>
-                    <input type="email" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={(fieldErrors.email_required || fieldErrors.email_valid ? 'form__border--error' : 'form__border--normal')}></input>
+                    <input type="email" id="email" name="email"
+                        value={email} onChange={(e) => setEmail(e.target.value)}
+                        className={(fieldErrors.email_required || fieldErrors.email_valid ? 'form__border--error' : 'form__border--normal')}
+                        autocomplete="email" required
+                        aria-invalid={fieldErrors.email_required || fieldErrors.email_valid ? true : false} aria-describedby={fieldErrors.email_required ? "emailRequiredError" : "emailValidError"}>
+                    </input>
                     {fieldErrors.email_required && (
-                        <p className="form__error">{fieldErrors.email_required}</p>
+                        <p id='emailRequiredError' className="form__error">{fieldErrors.email_required}</p>
                     )}
-                    {fieldErrors.email_valid && (
-                        <p className="form__error">{fieldErrors.email_valid}</p>
+                    {(fieldErrors.email_valid && !fieldErrors.email_required) && (
+                        <p id='emailValidError' className="form__error">{fieldErrors.email_valid}</p>
                     )}
                 </fieldset>
 
-                <fieldset className="form__type">
+                <fieldset className="form__type" aria-required="true" aria-invalid={fieldErrors.query ? true : false} aria-describedby="queryError" role="radiogroup">
                     <legend>Query Type <span className="form__required" aria-label="Required input.">*</span></legend>
                     <div className="radio-buttons">
                         <label className="form__container form__border--normal" htmlFor="general">
-                            <input className='form__container--input' type="radio" id="general" name="type" value="general" checked={queryType === 'general'} onChange={(e) => setQueryType(e.target.value)} />
+                            <input className='form__container--input' type="radio" id="general" name="type" value="general"
+                                checked={queryType === 'general'} onChange={(e) => setQueryType(e.target.value)}
+                                required />
                             <span className='form__container--checkbox'></span>
                             <p>General Enquiry</p>
                         </label>
@@ -135,7 +152,8 @@ function Main() {
                             <label htmlFor="general"></label>
                         </div> */}
                         <label className="form__container form__border--normal" htmlFor="support">
-                            <input className='form__container--input' type="radio" id="support" name="type" value="support" checked={queryType === 'support'} onChange={(e) => setQueryType(e.target.value)} />
+                            <input className='form__container--input' type="radio" id="support" name="type" value="support"
+                                checked={queryType === 'support'} onChange={(e) => setQueryType(e.target.value)} />
                             <span className='form__container--checkbox'></span>
                             <p>Support Request</p>
                         </label>
@@ -145,21 +163,29 @@ function Main() {
                         </div> */}
                     </div>
                     {fieldErrors.query && (
-                        <p className="form__error">{fieldErrors.query}</p>
+                        <p id='queryError' className="form__error">{fieldErrors.query}</p>
                     )}
                 </fieldset>
 
                 <fieldset className="form__message">
                     <legend>Message <span className="form__required" aria-label="Required input.">*</span></legend>
-                    <textarea className={(fieldErrors.message ? 'form__message--text form__border--error' : 'form__message--text form__border--normal')} name="message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    <textarea className={(fieldErrors.message ? 'form__message--text form__border--error' : 'form__message--text form__border--normal')} name="message"
+                        value={message} onChange={(e) => setMessage(e.target.value)}
+                        required
+                        aria-invalid={fieldErrors.message ? true : false} aria-describedby="messageError">
+                    </textarea>
                     {fieldErrors.message && (
-                        <p className="form__error">{fieldErrors.message}</p>
+                        <p id='messageError' className="form__error">{fieldErrors.message}</p>
                     )}
                 </fieldset>
 
                 <fieldset className='form__consent--container'>
                     <label htmlFor="consent" className="form__consent">
-                        <input className='form__consent--input' type="checkbox" id="consent" name="consent" checked={termsAgreed} onChange={(e) => setTermsAgreed(!termsAgreed)}></input>
+                        <input className='form__consent--input' type="checkbox" id="consent" name="consent"
+                            checked={termsAgreed} onChange={(e) => setTermsAgreed(!termsAgreed)}
+                            required
+                            aria-invalid={fieldErrors.termsAgreed ? true : false} aria-describedby="termsAgreedError">
+                        </input>
                         <span className='form__consent--checkbox'></span>
                         <p>I consent to being contacted by the team <span className="form__required" aria-label="Required input.">*</span></p>
                     </label>
@@ -169,7 +195,7 @@ function Main() {
                     </div> */}
 
                     {fieldErrors.termsAgreed && (
-                        <p className="form__error">{fieldErrors.termsAgreed}</p>
+                        <p id='termsAgreedError' className="form__error">{fieldErrors.termsAgreed}</p>
                     )}
                 </fieldset>
 

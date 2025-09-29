@@ -95,15 +95,19 @@ textarea:active {
     border: 0.0625rem solid var(--green-600);
 }
 
-input:focus,
-input:active,
+
 .form__container:focus,
-.form__container:active,
-textarea:focus,
-textarea:active {
+.form__container:active {
     outline: none;
     border: 0.0625rem solid var(--green-600);
     background-color: var(--green-200);
+}
+
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+    outline: none;
 }
 
 .form {
@@ -285,7 +289,7 @@ textarea:active {
 
 .pop-up {
     position: absolute;
-    top: 20vh;
+    top: 5vh;
     left: 50%;
     transform: translateX(-50%);
 
@@ -319,6 +323,7 @@ textarea:active {
 
     &__text {
         font-weight: 300;
+        font-size: 0.9rem;
     }
 }
 
